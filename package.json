@@ -1,0 +1,22 @@
+{
+  "name": "languages4translatewiki",
+  "version": "0.1.2",
+  "description": "A basic and lightweight replacement for Globalize. Store all languages supported by translatewiki.net in a JSON object, accesible as node module or by browser javascript interpret. No dependencies.",
+  "main": "languages.min.js",
+  "scripts": {
+    "build": "./build/build.sh",
+    "test": "node ./test/node-example.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/joker-x/languages4translatewiki.git"
+  },
+  "keywords": [
+    "globalize",
+    "languages",
+    "i18n"
+  ],
+  "author": "Iván Eixarch <ivan@sinanimodelucro.org>",
+  "license": "GPL",
+  "readmeFilename": "README.md"
+}
