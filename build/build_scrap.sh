@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 # This script need:
+#  npm install jsdom
 #  npm install -g uglify-js
 # gzip, node and npm
 #
@@ -10,7 +11,7 @@ set -e
 SCRIPTPATH=$( cd $(dirname $0) ; pwd -P )
 cd "$SCRIPTPATH"
 echo "Scraping translatewiki to languages.json..."
-JSON=$(node tw_api.js)
+JSON=$(node scrap.js)
 HEADER=$(cat header.js)
 FOOTER=$(cat footer.js)
 cd ..

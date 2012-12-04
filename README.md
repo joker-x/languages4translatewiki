@@ -10,10 +10,10 @@ Features
 
 1.  The same file can be use from the server side in nodejs to the client side in javascript browser interpret.
 2.  Also includes the json file for using in other languages, for example PHP.
-3.  Supports 330 languages
-4.  Lightweight, only 11K or 5.9K gzipped.
-5.  Very basic too, but enough for a lot of projects: only return the ISO 639 language codes of supported languages, the English name, the nativeName and his own direction.
-6.  Contain a build script which scrap translatewiki page for languages support, minimizes the code with uglify, and compresses it with gzip.
+3.  Supports 468 languages
+4.  Lightweight, only 12K or 6K gzipped.
+5.  Very basic too, but enough for a lot of projects: only return the ISO 639 language codes of supported languages, the nativeName and his own direction.
+6.  Contain a build script which call translatewiki api page for languages support, minimizes the code with uglify, and compresses it with gzip.
 
 Use
 ---
@@ -22,7 +22,7 @@ From javascript the JSON object is not accesible directly. You must use this pub
 
 *  **languages.isValid(langcode)**: *Return boolean value, true if langcode is supported.*
 *  **languages.getAllLanguageCode()**: *Return an array with all the language codes supported.*
-*  **languages.getLanguageInfo(langcode)**: *Return object {"name": name of the language in English, "nativeName", "direction"}.
+*  **languages.getLanguageInfo(langcode)**: *Return object {"nativeName", "direction"}.
 If langcode isn't supported return {}.*
 
 See the test folder for use examples:
@@ -102,10 +102,9 @@ console.log("¿isValid 'es' language code? "+languages.isValid('es'));
 Build
 -----
 
-To built a new version of languages4translatewiki, you need to install these node modules:
+To built a new version of languages4translatewiki, you need to install this node module:
 
 ```sh
-npm install jsdom
 npm install -g uglify-js
 ```
 

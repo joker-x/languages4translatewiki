@@ -1,4 +1,3 @@
-
 //return string "ltr" if the language is written from left to right or "rtl" in other case
 var getLangDirection = function(langcode) {
   var result = "ltr";
@@ -22,14 +21,15 @@ exports.getAllLanguageCode = function() {
   return result;
 };
 
-//return object {"name": name of the language in English, "nativeName", "direction"}
+//return object {"nativeName", "direction"}
 //if langcode isn't supported return {}
 exports.getLanguageInfo = function(langcode) {
   var result = {};
   if (exports.isValid(langcode)) {
     var lang = langs.lang[langcode];
-    result['name']=lang[0];
-    result['nativeName']=lang[1];
+    for (attr in langs['attribute']) {
+      result[attr] = lang[langs['attribute'][attr]];
+    }
     result['direction']=getLangDirection(langcode);
   }
   return result;
